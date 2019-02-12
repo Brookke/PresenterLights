@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LightService } from '../light.service';
 import { Subscription } from 'rxjs';
 import { LightSetting } from 'src/model/light-setting';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-light-panel',
@@ -12,6 +14,10 @@ export class LightPanelComponent implements OnInit, OnDestroy {
 
   currentLightSetting: LightSetting;
   private lightSub: Subscription;
+  private timerSub: Subscription;
+
+  private timer = -1;
+  private lightColor = '#8e8e8e';
 
   constructor(private lightService: LightService) { }
 
@@ -25,7 +31,25 @@ export class LightPanelComponent implements OnInit, OnDestroy {
   }
 
   setLight(lightSetting: LightSetting) {
-    this.currentLightSetting = lightSetting;
-  }
 
+    // If timer has already been created then unsubscribe so that you dont end up with multiple fires
+    if (typeof this.timerSub !== 'undefined') {
+      this.timerSub.unsubscribe();
+    }
+
+    this.currentLightSetting = lightSetting;
+    this.timer = lightSetting.duration;
+    this.lightColor = lightSetting.color;
+
+    if (lightSetting.duration !== -1) {
+      this.timerSub = interval(1000).subscribe(() => this.updateTime());
+    }
+  }
+  updateTime() {
+    if (this.timer > 0) {
+      --this.timer;
+    } else {
+      this.timerSub.unsubscribe();
+    }
+  }
 }

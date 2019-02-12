@@ -1,7 +1,20 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-  <input type="radio" name="color" value="red" ngModel> red<br>
-  <input type="radio" name="color" value="amber" ngModel> amber<br>
-  <input type="radio" name="color" value="green" ngModel> green<br>
-  <button>Send</button>
-</form>
+<div class="container">
+  <form #blue="ngForm" style="background-color: #0041aa;" (ngSubmit)="onSubmit(blue)" novalidate>
+    <input name="color" ngModel="#0041aa" hidden>
+    <label>Duration (sec):</label><input type="number" name="duration" ngModel="-1"><br>
+    <button>Send</button>
+  </form>
 
+
+  <form #red="ngForm" style="background-color: #a90000;" (ngSubmit)="onSubmit(red)" novalidate>
+    <input name="color" ngModel="#a90000" hidden>
+    <label>Duration (sec):</label><input type="number" name="duration" ngModel="-1"><br>
+    <button>Send</button>
+  </form>
+
+  <form #amber="ngForm" style="background-color: #ffa100;" (ngSubmit)="onSubmit(amber)" novalidate>
+    <input name="color" ngModel="#ffa100" hidden>
+    <label>Duration (sec):</label><input type="number" name="duration" ngModel="-1"><br>
+    <button>Send</button>
+  </form>
+</div>

@@ -1,3 +1,1 @@
-<div id="red" class="light" [hidden]="currentLightSetting.color != 'red'"></div>
-<div id="amber" class="light" [hidden]="currentLightSetting.color != 'amber'"></div>
-<div id="green" class="light" [hidden]="currentLightSetting.color != 'green'"></div>
+<div class="light" [style.background-color]="lightColor"><span class="timer" [hidden]="timer==-1">{{timer}}</span></div>

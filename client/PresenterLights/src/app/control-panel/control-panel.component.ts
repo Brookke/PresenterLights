@@ -19,6 +19,8 @@ export class ControlPanelComponent implements OnInit {
   onSubmit(f: NgForm) {
     const lightSetting = new LightSetting();
     lightSetting.color = f.value.color;
+    // Convert to a number
+    lightSetting.duration = parseInt(f.value.duration, 10);
     this.lightService.changeLight(lightSetting);
   }
 
