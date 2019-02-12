@@ -1,11 +1,13 @@
 # PresenterLights
 A traffic light system for presenters
 
-Green - You're okay for time
+Red - Studio red you are live
+
+Blue - Studio blue you are live
 
 Amber - You have 30 seconds left
 
-Red - You're out of time
+
 
 
 # Build
