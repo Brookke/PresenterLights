@@ -10,7 +10,9 @@ import { LightPanelComponent } from './light-panel/light-panel.component';
 import { LightFormComponent } from './control-panel/light-form/light-form.component';
 import { KeyboardShortcutsModule } from 'ng-keyboard-shortcuts';
 
-const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = { url: environment.host, options: {} };
 
 @NgModule({
   declarations: [

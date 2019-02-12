@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { LightService } from '../light.service';
 import { LightSetting } from '../../model/light-setting';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-control-panel',
@@ -10,24 +11,7 @@ import { LightSetting } from '../../model/light-setting';
 })
 export class ControlPanelComponent implements OnInit {
 
-  config: LightSetting[] = [
-    {
-      color: '#0041aa',
-      duration: -1
-    },
-    {
-      color: '#a90000',
-      duration: -1
-    },
-    {
-      color: '#ffa100',
-      duration: 30
-    },
-    {
-      color: '#666666',
-      duration: -1
-    }
-  ];
+  config: LightSetting[] = environment.lights;
 
   constructor() {
   }
