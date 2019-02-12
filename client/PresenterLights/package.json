@@ -21,6 +21,7 @@
     "@types/socket.io-client": "^1.4.32",
     "ajv-keywords": "^3.4.0",
     "core-js": "^2.5.4",
+    "ng-keyboard-shortcuts": "^6.1.1",
     "ngx-socket-io": "^2.1.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

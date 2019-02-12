@@ -10,19 +10,29 @@ import { LightSetting } from '../../model/light-setting';
 })
 export class ControlPanelComponent implements OnInit {
 
-  constructor(private lightService: LightService) {
+  config: LightSetting[] = [
+    {
+      color: '#0041aa',
+      duration: -1
+    },
+    {
+      color: '#a90000',
+      duration: -1
+    },
+    {
+      color: '#ffa100',
+      duration: 30
+    },
+    {
+      color: '#666666',
+      duration: -1
+    }
+  ];
+
+  constructor() {
   }
 
   ngOnInit() {
   }
-
-  onSubmit(f: NgForm) {
-    const lightSetting = new LightSetting();
-    lightSetting.color = f.value.color;
-    // Convert to a number
-    lightSetting.duration = parseInt(f.value.duration, 10);
-    this.lightService.changeLight(lightSetting);
-  }
-
 
 }

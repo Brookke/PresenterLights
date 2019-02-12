@@ -1,0 +1,5 @@
+<form #form="ngForm" [style.background-color]="lightSetting.color" (ngSubmit)="onSubmit(form)" novalidate>
+  <input name="color" [(ngModel)]="lightSetting.color" hidden>
+  <label>Duration (sec):</label><input type="number" name="duration" [(ngModel)]="lightSetting.duration"><br>
+  <button>Send</button>
+</form>

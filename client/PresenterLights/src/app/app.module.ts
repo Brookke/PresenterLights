@@ -7,6 +7,8 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { FormsModule } from '@angular/forms';
 import { LightPanelComponent } from './light-panel/light-panel.component';
+import { LightFormComponent } from './control-panel/light-form/light-form.component';
+import { KeyboardShortcutsModule } from 'ng-keyboard-shortcuts';
 
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
 
@@ -14,12 +16,14 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
   declarations: [
     AppComponent,
     ControlPanelComponent,
-    LightPanelComponent
+    LightPanelComponent,
+    LightFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    KeyboardShortcutsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
