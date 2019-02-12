@@ -7,7 +7,7 @@ Blue - Studio blue you are live
 
 Amber - You have 30 seconds left
 
-
+`ctrl + shift + a` to access the control panel
 
 
 # Build
