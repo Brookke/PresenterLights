@@ -26,7 +26,7 @@ $ npm start
 ## Client
 
 ```bash
-$ cd client
+$ cd client/PresenterLights
 $ npm install
 $ ng serve
 ```
