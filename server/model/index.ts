@@ -1,1 +1,1 @@
-export { LightSetting } from './light-message';
+export { LightSetting } from './light-setting';
