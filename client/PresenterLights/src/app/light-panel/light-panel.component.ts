@@ -16,8 +16,8 @@ export class LightPanelComponent implements OnInit, OnDestroy {
   private lightSub: Subscription;
   private timerSub: Subscription;
 
-  private timer = -1;
-  private lightColor = '#8e8e8e';
+  timer = -1;
+  lightColor = '#8e8e8e';
 
   constructor(private lightService: LightService) { }
 
